@@ -4,6 +4,33 @@
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  border: 4px solid red; }
+  height: 100vh;
+  width: 100vw;
+  margin: 0; }
   body .main_container {
-    border: 4px solid red; }
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-template-rows: 20% 60% 20%;
+    grid-template-areas: "side_bar header" "side_bar main" "side_bar footer"; }
+    body .main_container #header {
+      border: 1px solid red;
+      grid-area: header; }
+    body .main_container #main {
+      border: 1px solid blue;
+      grid-area: main; }
+      body .main_container #main #logout {
+        height: 60px;
+        width: 60px;
+        background: #141F3C;
+        border-radius: 50%;
+        font-size: x-small;
+        border: none;
+        outline: none; }
+    body .main_container #side_bar {
+      border: 1px solid yellow;
+      grid-area: side_bar; }
+    body .main_container #footer {
+      border: 1px solid black;
+      grid-area: footer; }

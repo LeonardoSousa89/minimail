@@ -67,9 +67,43 @@ body{
 
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    @include border_view(4px solid red);
+    @include size(100vh, 100vw);
+    @include percent(0);
 
     .main_container{
-        @include border_view(4px solid red);
+        @include size(100%, 100%);
+        @include d_grid(grid,
+                        10% 90%, 
+                        20% 60% 20%, 
+                        'side_bar header'
+                        'side_bar main'
+                        'side_bar footer'
+                        );
+
+        #header{
+            @include border_view(1px solid red);
+            grid-area: header;
+        }
+        #main{
+            @include border_view(1px solid blue);
+            grid-area: main;
+
+            #logout{
+                @include size(60px, 60px);
+                background: #141F3C;
+                border-radius: 50%;
+                font-size: x-small;
+                border: none;
+                outline: none;
+            }
+        }
+        #side_bar{
+            @include border_view(1px solid yellow);
+            grid-area: side_bar;
+        }
+        #footer{
+            @include border_view(1px solid black);
+            grid-area: footer;
+        }
     }
 }
