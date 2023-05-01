@@ -42,3 +42,5 @@ body {
       position: absolute;
       margin-bottom: 100px;
       display: none; }
+    body .main #loading {
+      color: #192C54; }
