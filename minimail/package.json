@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "render": "node-sass ./index/index.scss ./index/index.css",
-    "continuos_render": "node-sass --watch ./signup/index.scss ./signup/index.css"
+    "continuos_render": "node-sass --watch ./home/index.scss ./home/index.css"
   },
   "keywords": [],
   "author": "",
