@@ -27,8 +27,20 @@ obj.login.addEventListener('click', function(e){
         
         if(response.status === 200) {
 
-            obj.loading.style='display: flex'
-            doc.location.href='./home/index.html'
+            response.json()
+                    .then(response=>{
+                        
+                        const data={
+                            client: response.client,
+                            auth: response.auth,
+                            token: response.token
+                        }
+
+                        localStorage.setItem('data', JSON.stringify(data))
+                        
+                        obj.loading.style='display: flex'
+                        doc.location.href='./home/index.html'
+                    })
         }
 
         if(response.status != 200){
