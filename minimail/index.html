@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index/index.css">    
+    <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="main">
+
+        <div class="logo">
+            <img src="./assets/logo.png" alt="">
+        </div>
+
+        <div class="container col-sm-6">
+
+            <!-- está havendo uma distoção entre email e password,
+            em dispositivos menores e a solução foi aumentar a quantidade
+            de colunas -->
+            <div class="input-group col-sm-8 col-xs-12">
+                <span class="input-group-text" 
+                      id="inputGroup-sizing-default">email</span>
+                <input type="text" 
+                       id="email"
+                       class="form-control" 
+                       aria-label="Sizing example input" 
+                       aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <div class="input-group col-sm-8">
+                <span class="input-group-text" 
+                      id="inputGroup-sizing-default">password</span>
+                <input type="text" 
+                       id="password"
+                       class="form-control" 
+                       aria-label="Sizing example input" 
+                       aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <button type="button" 
+                class="btn btn-primary col-sm-8 col-xs-12" 
+                id="login">login</button>
+
+            <div class="dont-have-account" id="dont_have_account">
+                <strong>dont have any account? click here</strong>
+            </div>
+        </div>
+
+        <div class="alert alert-danger" id="alert_error" role="alert"></div>
+
+        <div class="spinner-border col-sm-6" role="status" id="loading">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+
+    </div>
+
+    <script src="./index/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

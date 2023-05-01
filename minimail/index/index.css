@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap");
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400; }
+  body .main {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px; }
+    @media (max-width: 480px) {
+      body .main .logo img {
+        height: 113px;
+        width: 282px; } }
+    body .main .logo {
+      margin-top: -100px;
+      margin-bottom: 100px; }
+    body .main .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px; }
+      body .main .container #password {
+        margin-bottom: 10px; }
+      body .main .container #login {
+        background: #141F3C;
+        outline: none;
+        border: none; }
+      body .main .container .dont-have-account {
+        color: #192C54;
+        margin-top: 10px;
+        font-size: x-small;
+        cursor: pointer; }
+        body .main .container .dont-have-account:hover {
+          color: #4C5A75; }
+    body .main #alert_error, body .main #loading {
+      position: absolute;
+      margin-bottom: 100px;
+      display: none; }

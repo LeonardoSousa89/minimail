@@ -1,0 +1,16 @@
+{
+  "name": "minimail",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "render": "node-sass ./index/index.scss ./index/index.css",
+    "continuos_render": "node-sass --watch ./index/index.scss ./index/index.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^8.0.0"
+  }
+}
