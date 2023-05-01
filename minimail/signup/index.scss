@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+
+
+
+$b-color:#141F3C;
+$s-color:#192C54;
+$lb-color:#4C5A75;
+$l-color:#E9E9E9;
+$c-color:#E7DAD1;
+$smoke:whitesmoke;
+$grey:#9CA1A6;
+$dark:black;
+$light:white;
+$val:0.5em;
+$empty-val:none;
+$hidden:hidden;
+$null:0;
+$half-rem:0.5rem;
+$pointer:pointer;
+@mixin display($scr){
+    display:$scr;
+}
+ @mixin area($areas){
+  grid-area:$areas;
+}
+ @mixin d_flex($f_display,$direction,$justify,$align){
+  display:$f_display;
+  flex-direction:$direction;
+  justify-content:$justify;
+  align-items:$align;
+}
+@mixin d_grid($g_display,$columns,$rows,$g_areas){
+  display:$g_display;
+  grid-template-columns:$columns;
+  grid-template-rows:$rows;
+  grid-template-areas:$g_areas;
+}
+@mixin size($hgt,$wdt){
+  height:$hgt;
+  width:$wdt;
+}
+@mixin f_size($font){
+  font-size:$font;
+}
+@mixin radius($bdr){
+  border-radius:$bdr; 
+}
+@mixin size($hgt,$wdt){
+  height:$hgt;
+  width:$wdt;
+}
+@mixin percent($p_vh){
+  margin:$p_vh;
+}
+@mixin border_view($args){
+    border: $args;
+}
+
+body{
+
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  
+  .main{
+
+      @include size(100vh, 100vw);
+      @include d_flex(flex, column, center, center);
+
+      @media (max-width: 480px) {
+      .logo img{
+            //tamanho original (170h x 423w) divisão por 1,5
+            @include size(113px, 282px);
+        }
+      }
+
+    .logo{
+        margin-top: -100px;
+        margin-bottom: 100px;
+    }
+
+    .container{
+
+      @include d_flex(flex, column, center, center);
+               
+      padding: 20px;
+
+      #password{
+        margin-bottom: 10px;
+      }
+
+      #send{
+        background: #141F3C;
+
+        outline: $empty-val;
+        border: $empty-val;
+      }
+
+      .have-account{
+        color: #192C54;
+        margin-top: 10px;
+        font-size: x-small;
+        cursor: $pointer;
+
+        &:hover{
+            color: #4C5A75;
+        }
+      }
+
+    }
+
+    #alert_error, #loading{
+      position: absolute;
+      margin-bottom: 100px;
+      display: none;
+    }
+
+    #loading{
+    color: #192C54;
+    }
+
+  }
+}
+
+
