@@ -87,15 +87,6 @@ body{
         #main{
             @include border_view(1px solid blue);
             grid-area: main;
-
-            #logout{
-                @include size(60px, 60px);
-                background: #141F3C;
-                border-radius: 50%;
-                font-size: x-small;
-                border: none;
-                outline: none;
-            }
         }
         #side_bar{
             // @include border_view(1px solid yellow);
@@ -110,10 +101,12 @@ body{
                 @include size(56px, 141px)
             }
 
-            .sendbox, .inbox{
+            .sendbox, .inbox, .logout{
                 margin-top: 20px;
                 width: 100%;
-                padding: 5px;
+                padding: 10px;
+
+                background: rgba($color: #4C5A75, $alpha: 0.05);
 
                 transition-property: all;
                 transition-duration: 0.5s;
@@ -129,6 +122,15 @@ body{
             }
 
             .inbox{
+                &:hover{
+                    background: #141F3C;
+                    color: #E9E9E9;
+                    cursor: pointer;
+                    width: 100%;
+                }
+            }
+
+            .logout{
                 &:hover{
                     background: #141F3C;
                     color: #E9E9E9;

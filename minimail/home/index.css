@@ -20,14 +20,6 @@ body {
     body .main_container #main {
       border: 1px solid blue;
       grid-area: main; }
-      body .main_container #main #logout {
-        height: 60px;
-        width: 60px;
-        background: #141F3C;
-        border-radius: 50%;
-        font-size: x-small;
-        border: none;
-        outline: none; }
     body .main_container #side_bar {
       display: flex;
       flex-direction: column;
@@ -40,10 +32,11 @@ body {
       body .main_container #side_bar img {
         height: 56px;
         width: 141px; }
-      body .main_container #side_bar .sendbox, body .main_container #side_bar .inbox {
+      body .main_container #side_bar .sendbox, body .main_container #side_bar .inbox, body .main_container #side_bar .logout {
         margin-top: 20px;
         width: 100%;
-        padding: 5px;
+        padding: 10px;
+        background: rgba(76, 90, 117, 0.05);
         transition-property: all;
         transition-duration: 0.5s; }
       body .main_container #side_bar .sendbox:hover {
@@ -52,6 +45,11 @@ body {
         cursor: pointer;
         width: 100%; }
       body .main_container #side_bar .inbox:hover {
+        background: #141F3C;
+        color: #E9E9E9;
+        cursor: pointer;
+        width: 100%; }
+      body .main_container #side_bar .logout:hover {
         background: #141F3C;
         color: #E9E9E9;
         cursor: pointer;
