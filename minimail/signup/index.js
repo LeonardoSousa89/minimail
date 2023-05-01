@@ -29,13 +29,8 @@ obj.send.addEventListener('click', function(e){
         
         if(response.status === 200) {
 
-            response.json()
-                    .then(response=>{
-                        
-                        console.log(response)
-                        /*obj.loading.style='display: flex'
-                        doc.location.href='./home/index.html'*/
-                    })
+            obj.loading.style='display: flex'
+            doc.location.href='../index.html'
         }
 
         if(response.status != 200){

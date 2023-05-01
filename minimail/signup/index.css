@@ -39,7 +39,7 @@ body {
           color: #4C5A75; }
     body .main #alert_error, body .main #loading {
       position: absolute;
-      margin-bottom: 100px;
+      margin-bottom: 150px;
       display: none; }
     body .main #loading {
       color: #192C54; }
