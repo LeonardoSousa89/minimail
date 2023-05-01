@@ -73,7 +73,7 @@ body{
     .main_container{
         @include size(100%, 100%);
         @include d_grid(grid,
-                        10% 90%, 
+                        15% 85%, 
                         20% 60% 20%, 
                         'side_bar header'
                         'side_bar main'
@@ -98,8 +98,45 @@ body{
             }
         }
         #side_bar{
-            @include border_view(1px solid yellow);
+            // @include border_view(1px solid yellow);
+            @include d_flex(flex, column, start, flex-end);
+            @include percent(0);
+            
             grid-area: side_bar;
+            padding: 5px;
+            overflow: hidden;
+
+            img{
+                @include size(56px, 141px)
+            }
+
+            .sendbox, .inbox{
+                margin-top: 20px;
+                width: 100%;
+                padding: 5px;
+
+                transition-property: all;
+                transition-duration: 0.5s;
+            }
+
+            .sendbox{
+                &:hover{
+                    background: #141F3C;
+                    color: #E9E9E9;
+                    cursor: pointer;
+                    width: 100%;
+                }
+            }
+
+            .inbox{
+                &:hover{
+                    background: #141F3C;
+                    color: #E9E9E9;
+                    cursor: pointer;
+                    width: 100%;
+                }
+            }
+
         }
         #footer{
             @include border_view(1px solid black);

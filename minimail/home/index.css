@@ -11,7 +11,7 @@ body {
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-columns: 10% 90%;
+    grid-template-columns: 15% 85%;
     grid-template-rows: 20% 60% 20%;
     grid-template-areas: "side_bar header" "side_bar main" "side_bar footer"; }
     body .main_container #header {
@@ -29,8 +29,33 @@ body {
         border: none;
         outline: none; }
     body .main_container #side_bar {
-      border: 1px solid yellow;
-      grid-area: side_bar; }
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: flex-end;
+      margin: 0;
+      grid-area: side_bar;
+      padding: 5px;
+      overflow: hidden; }
+      body .main_container #side_bar img {
+        height: 56px;
+        width: 141px; }
+      body .main_container #side_bar .sendbox, body .main_container #side_bar .inbox {
+        margin-top: 20px;
+        width: 100%;
+        padding: 5px;
+        transition-property: all;
+        transition-duration: 0.5s; }
+      body .main_container #side_bar .sendbox:hover {
+        background: #141F3C;
+        color: #E9E9E9;
+        cursor: pointer;
+        width: 100%; }
+      body .main_container #side_bar .inbox:hover {
+        background: #141F3C;
+        color: #E9E9E9;
+        cursor: pointer;
+        width: 100%; }
     body .main_container #footer {
       border: 1px solid black;
       grid-area: footer; }
