@@ -8,7 +8,7 @@ const obj={
     have_account: doc.getElementById('have_account'),
     alert_error: doc.getElementById('alert_error'),
     loading: doc.getElementById('loading'),
-    url_signup: 'http://127.0.0.1:34568/signup'
+    url_signup: 'http://170.84.38.173:34568/signup'
 }
 
 obj.send.addEventListener('click', function(e){

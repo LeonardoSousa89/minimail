@@ -7,7 +7,7 @@ const obj={
     dont_have_account: doc.getElementById('dont_have_account'),
     alert_error: doc.getElementById('alert_error'),
     loading: doc.getElementById('loading'),
-    url_login: 'http://127.0.0.1:34568/login'
+    url_login: 'http://170.84.38.173:34568/login'
 }
 
 obj.login.addEventListener('click', function(e){
