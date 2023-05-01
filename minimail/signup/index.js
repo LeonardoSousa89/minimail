@@ -27,13 +27,13 @@ obj.send.addEventListener('click', function(e){
     })
     .then(response=>{
         
-        if(response.status === 200) {
+        if(response.status === 201) {
 
             obj.loading.style='display: flex'
             doc.location.href='../index.html'
         }
 
-        if(response.status != 200){
+        if(response.status != 201){
             response.json()
                     .then(response=>{
                         const erro=Object.keys(response).map(e=>{
