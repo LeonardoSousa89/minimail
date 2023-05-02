@@ -46,7 +46,9 @@ body {
             width: 300px; } }
     body .main_container #main {
       grid-area: main;
-      padding: 5px; }
+      padding: 5px;
+      color: #141F3C;
+      font-weight: bold; }
       @media (max-width: 768px) {
         body .main_container #main {
           width: 100%;

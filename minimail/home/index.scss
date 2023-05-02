@@ -118,6 +118,8 @@ body{
             }
             grid-area: main;
             padding: 5px;
+            color: #141F3C;
+            font-weight: bold;
         }
         #side_bar{
             @media(max-width:768px) {
