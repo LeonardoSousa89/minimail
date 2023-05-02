@@ -1,6 +1,8 @@
 const doc=document
 
 const obj={
+    name: doc.getElementById('name'),
+    email: doc.getElementById('email'),
     sendbox: doc.getElementById('sendbox'),
     inbox: doc.getElementById('inbox'),
     logout: doc.getElementById('logout'),
@@ -52,3 +54,13 @@ function verifyRoute(){
 }
 
 verifyRoute()
+
+function getUserCredentials(){
+    const credentials=localStorage.getItem('data')
+    const client=JSON.parse(credentials)
+
+    obj.name.append(client.client.name)
+    obj.email.append(client.client.email)
+}
+
+getUserCredentials()
