@@ -78,28 +78,46 @@ body{
         @include size(100%, 100%);
         @include d_grid(grid,
                         15% 85%, 
-                        40% 50% 10%, 
+                        40% 56% 4%, 
                         'side_bar header'
                         'side_bar main'
                         'side_bar footer'
                         );
-
+        overflow: hidden;
         color: #E7DAD1;
 
         #header{
             @media(max-width:768px) {
                 width: 100%;
                 height: 40%;
+                background: none;
             }
-            background: #141F3C;
+            @include d_flex(flex, row, center, center);
+
+            overflow: hidden;
             grid-area: header;
+            background: #141F3C;
+            padding: 5px;
+            
+            h3,p{
+                color: #141F3C;
+                font-weight: bold;
+            }
+
+            #slider{
+                @media(max-width:480px) {
+                    @include size(150px, 300px);
+                }
+                @include size(250px, 700px);
+            }
         }
         #main{
             @media(max-width:768px) {
                 width: 100%;
-                height: 50%;
+                height: 55%;
             }
             grid-area: main;
+            padding: 5px;
         }
         #side_bar{
             @media(max-width:768px) {
@@ -116,7 +134,7 @@ body{
             overflow: hidden;
 
             img{
-                @include size(56px, 141px)
+                @include size(56px, 141px);
             }
 
             .sendbox, .inbox, .logout{
@@ -161,10 +179,18 @@ body{
         #footer{
             @media(max-width:768px) {
                 width: 100%;
-                height: 10%;
+                height: 5%;
             }
+
+            @include d_flex(flex, row, center, center);
+
+            box-shadow: 0 0 9px #141F3C;
             background: #4C5A75;
             grid-area: footer;
+
+            strong{
+                font-size: x-small;
+            }
         }
     }
 }
