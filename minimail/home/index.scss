@@ -90,7 +90,7 @@ body{
             @media(max-width:768px) {
                 width: 100%;
                 height: 40%;
-                background: #E9E9E9;
+                background: #E7DAD1;
             }
             @include d_flex(flex, row, center, center);
 
@@ -121,7 +121,7 @@ body{
             grid-area: main;
             padding: 5px;
             color: #141F3C;
-            background: #E9E9E9;
+            background: #E7DAD1;
             font-weight: bold;
 
             .caption{
@@ -129,8 +129,8 @@ body{
                     background: #4C5A75;
                 }
                 text-align: center;
-                                       background: #141F3C;
-                                       color: #E9E9E9;
+                background: #141F3C;
+                color: #E7DAD1;
             }
         }
         #side_bar{

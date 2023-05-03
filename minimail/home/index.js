@@ -53,7 +53,8 @@ function verifyRoute(){
     }
 }
 
-verifyRoute()
+//a fazer
+function verifyToken(){}
 
 function getUserCredentials(){
     const credentials=localStorage.getItem('data')

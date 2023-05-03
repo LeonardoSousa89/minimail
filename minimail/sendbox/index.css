@@ -17,12 +17,20 @@ body {
     overflow: hidden;
     color: #E7DAD1; }
     body .main_container .sendbox {
-      grid-area: sendbox; }
+      grid-area: sendbox;
+      background: #E7DAD1; }
+      body .main_container .sendbox .response_area {
+        margin: 10px 10px;
+        padding: 5px;
+        text-align: center;
+        box-shadow: 0 0 32px #192C54;
+        background: #192C54;
+        color: #E7DAD1; }
     body .main_container #side_bar {
       display: flex;
       flex-direction: column;
       justify-content: start;
-      align-items: flex-start;
+      align-items: start;
       margin: 0;
       color: #E7DAD1;
       background: #192C54;
