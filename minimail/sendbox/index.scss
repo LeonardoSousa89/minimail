@@ -19,6 +19,9 @@ $hidden:hidden;
 $null:0;
 $half-rem:0.5rem;
 $pointer:pointer;
+$max-width:768px;
+$boolean:true;
+$display:display;
 
 
 
@@ -63,15 +66,19 @@ $pointer:pointer;
 
 
 
-
 body{
 
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
+
     @include size(100vh, 100vw);
     @include percent(0);
 
     .main_container{
+        @media(max-width:768px) {
+          display: flex;
+          flex-direction: column;
+        }
         @include size(100%, 100%);
         @include d_grid(grid,
                         15% 85%, 
@@ -82,6 +89,9 @@ body{
         color: $light;
 
         .sendbox{
+            @media(max-width:768px) {
+                width: 100%;
+            }
             grid-area: sendbox;
             
             background: $light;
@@ -100,7 +110,7 @@ body{
             @media(max-width:768px) {
                 display: none;
             }
-            
+
             @include d_flex(flex, column, start, start);
             @include percent(0);
 

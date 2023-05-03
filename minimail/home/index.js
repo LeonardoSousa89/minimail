@@ -6,7 +6,8 @@ const obj={
     sendbox: doc.getElementById('sendbox'),
     inbox: doc.getElementById('inbox'),
     logout: doc.getElementById('logout'),
-    url_logout: 'http://127.0.0.1:34568/signout'
+    url_logout: 'http://127.0.0.1:34568/signout',
+    url_client: (id)=>`http://127.0.0.1:34568/user/${id}`
 }
 
 obj.sendbox.addEventListener('click', function(e){
@@ -53,15 +54,61 @@ function verifyRoute(){
     }
 }
 
-//a fazer
-function verifyToken(){}
+/*
+ a cada 1 minuto ele envia requisição para api verificando se
+ o token ainda é válido, se não for ele limpa o localstorage.  
+*/
+function verifyToken(){
+    
+    const credentials=getUserCredentials()
+
+    
+    setInterval(function(){
+        const url=obj.url_client(credentials.id)
+
+        fetch(url,{
+            method: 'GET',
+            headers: {
+                'Content-Type':'application/json',
+                'Authorization': `Bearer ${token}`
+            }
+        })
+    },60000)
+    
+    let token=false
+    
+    setInterval(function(){
+        if(token){
+
+            cleanStorage()
+        }else{
+
+            console.log('verificando...')
+        }
+    },60000)
+}
+
+verifyToken()
+
+function cleanStorage(){
+
+    localStorage.removeItem('data')
+}
 
 function getUserCredentials(){
     const credentials=localStorage.getItem('data')
     const client=JSON.parse(credentials)
 
-    obj.name.append(client.client.name)
-    obj.email.append(client.client.email)
+    return { client }
 }
 
-getUserCredentials()
+function cardHome(){
+
+    const credentials=getUserCredentials()
+    
+    obj.name.append(credentials.name)
+    obj.email.append(credentials.email)
+}
+
+cardHome()
+
