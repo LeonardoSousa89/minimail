@@ -4,11 +4,11 @@
 
 
 
-$b-color:#141F3C;
-$s-color:#192C54;
-$lb-color:#4C5A75;
-$l-color:#E9E9E9;
-$c-color:#E7DAD1;
+$primary:#141F3C;
+$secondary:#192C54;
+$third:#4C5A75;
+$icecream:#E9E9E9;
+$choco:#E7DAD1;
 $smoke:whitesmoke;
 $grey:#9CA1A6;
 $dark:black;
@@ -79,20 +79,20 @@ body{
                         'side_bar sendbox'
                         );
         overflow: hidden;
-        color: #E7DAD1;
+        color: $light;
 
         .sendbox{
             grid-area: sendbox;
             
-            background: #E7DAD1;
+            background: $light;
 
             .response_area{
               margin: 10px 10px;
               padding: 5px;
               text-align: center;
-              box-shadow: 0 0 32px #192C54;
-              background: #192C54;
-              color: #E7DAD1;   
+              box-shadow: 0 0 32px $secondary;
+              background: $secondary;
+              color: $light;   
             }
         }
 
@@ -105,8 +105,8 @@ body{
             @include percent(0);
 
             
-            color: #E7DAD1;
-            background: #192C54;
+            color: $light;
+            background: $secondary;
             grid-area: side_bar;
             padding: 5px;
             overflow: hidden;
@@ -129,8 +129,8 @@ body{
 
             .inbox{
                 &:hover{
-                    background: #141F3C;
-                    color: #E9E9E9;
+                    background: $primary;
+                    color: $icecream;
                     cursor: pointer;
                     width: 100%;
                 }
@@ -138,8 +138,8 @@ body{
 
             .home{
                 &:hover{
-                    background: #141F3C;
-                    color: #E9E9E9;
+                    background: $primary;
+                    color: $icecream;
                     cursor: pointer;
                     width: 100%;
                 }
