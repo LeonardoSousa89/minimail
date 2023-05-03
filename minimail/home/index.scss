@@ -138,7 +138,7 @@ body{
                 display: none;
             }
 
-            @include d_flex(flex, column, start, flex-end);
+            @include d_flex(flex, column, start, start);
             @include percent(0);
             
             color: #E7DAD1;
