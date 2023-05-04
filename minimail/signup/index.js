@@ -49,7 +49,14 @@ obj.send.addEventListener('click', function(e){
         }
 
     })
-    .catch(e=>console.log(e))
+    .catch(_=>{
+        obj.alert_error.style='display: flex'
+        obj.alert_error.append("i'm sorry there's an error with server")
+
+        setInterval(function(){ 
+            doc.location.reload() 
+        },1200)
+    })
 
 })
 

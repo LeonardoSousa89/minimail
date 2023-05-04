@@ -46,7 +46,7 @@ obj.login.addEventListener('click', function(e){
         if(response.status != 200){
             response.json()
                     .then(response=>{
-                        const erro=Object.keys(response).map(e=>{
+                            Object.keys(response).map(e=>{
 
                             obj.alert_error.style='display: flex'
                             obj.alert_error.append(response[e])
@@ -59,7 +59,14 @@ obj.login.addEventListener('click', function(e){
         }
 
     })
-    .catch(e=>console.log(e))
+    .catch(_=>{
+        obj.alert_error.style='display: flex'
+        obj.alert_error.append("i'm sorry there's an error with server")
+
+        setInterval(function(){ 
+            doc.location.reload() 
+        },1200)
+    })
 
 })
 

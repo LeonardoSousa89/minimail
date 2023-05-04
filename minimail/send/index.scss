@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+
+
+
+$primary:#141F3C;
+$secondary:#192C54;
+$third:#4C5A75;
+$icecream:#E9E9E9;
+$choco:#E7DAD1;
+$smoke:whitesmoke;
+$grey:#9CA1A6;
+$dark:black;
+$light:white;
+$val:0.5em;
+$empty-val:none;
+$hidden:hidden;
+$null:0;
+$half-rem:0.5rem;
+$pointer:pointer;
+$max-width:768px;
+$boolean:true;
+$display:display;
+
+
+
+@mixin display($scr){
+    display:$scr;
+}
+ @mixin area($areas){
+  grid-area:$areas;
+}
+ @mixin d_flex($f_display,$direction,$justify,$align){
+  display:$f_display;
+  flex-direction:$direction;
+  justify-content:$justify;
+  align-items:$align;
+}
+@mixin d_grid($g_display,$columns,$rows,$g_areas){
+  display:$g_display;
+  grid-template-columns:$columns;
+  grid-template-rows:$rows;
+  grid-template-areas:$g_areas;
+}
+@mixin size($hgt,$wdt){
+  height:$hgt;
+  width:$wdt;
+}
+@mixin f_size($font){
+  font-size:$font;
+}
+@mixin radius($bdr){
+  border-radius:$bdr; 
+}
+@mixin size($hgt,$wdt){
+  height:$hgt;
+  width:$wdt;
+}
+@mixin percent($p_vh){
+  margin:$p_vh;
+}
+@mixin border_view($args){
+    border: $args;
+}
+
+
+
+body{
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+
+    @include size(100vh, 100vw);
+    @include percent(0);
+
+    .main_container{
+        @media(max-width:768px) {
+          display: flex;
+          flex-direction: column;
+        }
+        @include size(100%, 100%);
+        @include d_grid(grid,
+                        15% 85%, 
+                        100%, 
+                        'side_bar sendbox'
+                        );
+        overflow: hidden;
+        color: $light;
+
+        .sendbox{
+            @media(max-width:768px) {
+                width: 100%;
+            }
+            
+            grid-area: sendbox;
+            background: $light;
+            padding: 10px;
+            overflow-y: scroll;
+
+            .panel{
+              cursor: pointer;
+
+              #title, #response_content{
+                color: $secondary;
+              }
+            }
+
+            .response_area{
+              margin: 10px 10px;
+              padding: 5px;
+              text-align: center;
+              box-shadow: 0 0 32px $secondary;
+              background: $secondary;
+              color: $light;  
+            }
+        }
+
+        #side_bar{
+            @media(max-width:768px) {
+                display: none;
+            }
+
+            @include d_flex(flex, column, start, start);
+            @include percent(0);
+
+            
+            color: $light;
+            background: $secondary;
+            grid-area: side_bar;
+            padding: 5px;
+            overflow: hidden;
+
+            img{
+                @include size(56px, 141px);
+            }
+
+            .home, .inbox{
+                margin-top: 20px;
+                width: 100%;
+                padding: 10px;
+
+                background: rgba($color: #4C5A75, $alpha: 0.05);
+
+                transition-property: all;
+                transition-duration: 0.5s;
+            }
+
+
+            .inbox{
+                &:hover{
+                    background: $primary;
+                    color: $icecream;
+                    cursor: pointer;
+                    width: 100%;
+                }
+            }
+
+            .home{
+                &:hover{
+                    background: $primary;
+                    color: $icecream;
+                    cursor: pointer;
+                    width: 100%;
+                }
+            }
+
+        }
+    }
+}
