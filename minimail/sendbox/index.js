@@ -3,6 +3,7 @@ const doc=document
 const obj={
     sendbox: doc.querySelector('.sendbox'),
     inbox: doc.querySelector('.inbox'),
+    send: doc.querySelector('.send'),
     home: doc.querySelector('.home'),
     alert_error: doc.querySelector('#alert_error'),
     Url_sendedMail: (id, senderEmail, size, page)=> `http://127.0.0.1:34568/sendbox/${id}/user?sender=${senderEmail}&size=${size}&page=${page}`,
@@ -13,6 +14,12 @@ obj.inbox.addEventListener('click', function(e){
     e.preventDefault()
 
     doc.location.href='../inbox/index.html'
+})
+
+obj.send.addEventListener('click', function(e){
+    e.preventDefault()
+
+    doc.location.href='../send/index.html'
 })
 
 obj.home.addEventListener('click', function(e){
