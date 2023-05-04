@@ -161,7 +161,8 @@ function sendedMail(){
                             panel.addEventListener('click', function(e){
                                 e.preventDefault()
 
-                                console.log(id)
+                                localStorage.setItem('client_id', id)
+                                doc.location.href='../config/index.html'
                             })
 
                             //sendbox area insert card from each email sended

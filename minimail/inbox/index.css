@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap");
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  width: 100vw;
+  margin: 0; }
+  body .main_container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    grid-template-rows: 100%;
+    grid-template-areas: "side_bar inbox";
+    overflow: hidden;
+    color: white; }
+    @media (max-width: 768px) {
+      body .main_container {
+        display: flex;
+        flex-direction: column; } }
+    body .main_container .inbox {
+      grid-area: inbox;
+      background: white;
+      padding: 10px;
+      overflow-y: scroll; }
+      @media (max-width: 768px) {
+        body .main_container .inbox {
+          width: 100%; } }
+      body .main_container .inbox .panel {
+        cursor: pointer; }
+        body .main_container .inbox .panel #title, body .main_container .inbox .panel #response_content {
+          color: #192C54; }
+      body .main_container .inbox .response_area {
+        margin: 10px 10px;
+        padding: 5px;
+        text-align: center;
+        box-shadow: 0 0 32px #192C54;
+        background: #192C54;
+        color: white; }
+    body .main_container #side_bar {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+      margin: 0;
+      color: white;
+      background: #192C54;
+      grid-area: side_bar;
+      padding: 5px;
+      overflow: hidden; }
+      @media (max-width: 768px) {
+        body .main_container #side_bar {
+          display: none; } }
+      body .main_container #side_bar img {
+        height: 56px;
+        width: 141px; }
+      body .main_container #side_bar .home, body .main_container #side_bar .sendbox {
+        margin-top: 20px;
+        width: 100%;
+        padding: 10px;
+        background: rgba(76, 90, 117, 0.05);
+        transition-property: all;
+        transition-duration: 0.5s; }
+      body .main_container #side_bar .sendbox:hover {
+        background: #141F3C;
+        color: #E9E9E9;
+        cursor: pointer;
+        width: 100%; }
+      body .main_container #side_bar .home:hover {
+        background: #141F3C;
+        color: #E9E9E9;
+        cursor: pointer;
+        width: 100%; }
