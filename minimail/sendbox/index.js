@@ -118,7 +118,45 @@ function sendedMail(){
     .then(response=>{
 
         if(response.status === 200 ){
-            console.log(response.json())
+            
+            response.json()
+                    .then(response=>{
+                        
+                        response.data.map(e=>{
+
+                            const topic=e.topic
+                            const mail_msg=e.mail_msg.substring(0,50) + '...'
+
+                            const panel_title=doc.createElement('p')
+                            panel_title.setAttribute('id', 'title')
+
+                            const panel_element=doc.createElement('strong')
+                            panel_element.setAttribute('id', 'response_content')
+
+                            //Panel with heading 
+                            //link: https://getbootstrap.com/docs/3.3/components/
+                            const panel=doc.createElement('div')
+                            panel.setAttribute('class', 'panel panel-default')
+
+                            const panel_heading=doc.createElement('div')
+                            panel_heading.setAttribute('class', 'panel-heading')
+                            
+                            const panel_body=doc.createElement('div')
+                            panel_body.setAttribute('class', 'panel-body')
+
+                            panel.append(panel_heading)
+                            panel.append(panel_body)
+
+                            panel_heading.append(panel_title)
+
+                            panel_title.append(topic)
+                            panel_element.append(mail_msg)
+
+                            panel_body.append(panel_element)
+
+                            obj.sendbox.append(panel)
+                        })
+                    })
         }
         if(response.status != 200 ){
             

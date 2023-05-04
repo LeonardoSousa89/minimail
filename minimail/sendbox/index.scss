@@ -92,9 +92,19 @@ body{
             @media(max-width:768px) {
                 width: 100%;
             }
-            grid-area: sendbox;
             
+            grid-area: sendbox;
             background: $light;
+            padding: 10px;
+            overflow-y: scroll;
+
+            .panel{
+              cursor: pointer;
+
+              #title, #response_content{
+                color: $secondary;
+              }
+            }
 
             .response_area{
               margin: 10px 10px;
@@ -102,7 +112,7 @@ body{
               text-align: center;
               box-shadow: 0 0 32px $secondary;
               background: $secondary;
-              color: $light;   
+              color: $light;  
             }
         }
 

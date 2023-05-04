@@ -22,10 +22,16 @@ body {
         flex-direction: column; } }
     body .main_container .sendbox {
       grid-area: sendbox;
-      background: white; }
+      background: white;
+      padding: 10px;
+      overflow-y: scroll; }
       @media (max-width: 768px) {
         body .main_container .sendbox {
           width: 100%; } }
+      body .main_container .sendbox .panel {
+        cursor: pointer; }
+        body .main_container .sendbox .panel #title, body .main_container .sendbox .panel #response_content {
+          color: #192C54; }
       body .main_container .sendbox .response_area {
         margin: 10px 10px;
         padding: 5px;
