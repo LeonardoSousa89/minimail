@@ -151,7 +151,7 @@ body{
                 @include size(56px, 141px);
             }
 
-            .sendbox, .inbox, .logout{
+            .sendbox, .inbox, .send, .logout{
                 margin-top: 20px;
                 width: 100%;
                 padding: 10px;
@@ -172,6 +172,15 @@ body{
             }
 
             .inbox{
+                &:hover{
+                    background: #141F3C;
+                    color: #E9E9E9;
+                    cursor: pointer;
+                    width: 100%;
+                }
+            }
+
+            .send{
                 &:hover{
                     background: #141F3C;
                     color: #E9E9E9;

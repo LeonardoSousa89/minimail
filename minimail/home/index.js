@@ -5,6 +5,7 @@ const obj={
     email: doc.getElementById('email'),
     sendbox: doc.getElementById('sendbox'),
     inbox: doc.getElementById('inbox'),
+    send: doc.getElementById('send'),
     logout: doc.getElementById('logout'),
     url_logout: 'http://127.0.0.1:34568/signout',
     url_client: (id)=>`http://127.0.0.1:34568/user/${id}`
@@ -20,6 +21,12 @@ obj.inbox.addEventListener('click', function(e){
     e.preventDefault()
 
     doc.location.href='../inbox/index.html'
+})
+
+obj.send.addEventListener('click', function(e){
+    e.preventDefault()
+
+    doc.location.href='../send/index.html'
 })
 
 obj.logout.addEventListener('click', function(e){
