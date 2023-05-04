@@ -88,32 +88,34 @@ body{
         overflow: hidden;
         color: $light;
 
-        .sendbox{
+        .send{
             @media(max-width:768px) {
                 width: 100%;
             }
-            
+
             grid-area: sendbox;
             background: $light;
-            padding: 10px;
-            overflow-y: scroll;
+            padding: 20px;
 
-            .panel{
-              cursor: pointer;
-
-              #title, #response_content{
-                color: $secondary;
-              }
+            input{
+              width: 80vw;
+              margin-bottom: 10px;
+            }
+            #sender{
+              margin-top: 20px;
+            }
+            .btn{
+              background: #141F3C;
+        
+              outline: $empty-val;
+              border: $empty-val;
+              margin-top: 10px;
+            }
+            #alert_error{
+              margin-top: 20px;
+              display: none;
             }
 
-            .response_area{
-              margin: 10px 10px;
-              padding: 5px;
-              text-align: center;
-              box-shadow: 0 0 32px $secondary;
-              background: $secondary;
-              color: $light;  
-            }
         }
 
         #side_bar{
@@ -135,7 +137,7 @@ body{
                 @include size(56px, 141px);
             }
 
-            .home, .inbox{
+            .home, .inbox, .sendbox{
                 margin-top: 20px;
                 width: 100%;
                 padding: 10px;
@@ -154,6 +156,15 @@ body{
                     cursor: pointer;
                     width: 100%;
                 }
+            }
+
+            .sendbox{
+              &:hover{
+                  background: $primary;
+                  color: $icecream;
+                  cursor: pointer;
+                  width: 100%;
+              }
             }
 
             .home{

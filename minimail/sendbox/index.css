@@ -28,6 +28,9 @@ body {
       @media (max-width: 768px) {
         body .main_container .sendbox {
           width: 100%; } }
+      body .main_container .sendbox #alert_error {
+        position: absolute;
+        display: none; }
       body .main_container .sendbox .panel {
         cursor: pointer; }
         body .main_container .sendbox .panel #title, body .main_container .sendbox .panel #response_content {

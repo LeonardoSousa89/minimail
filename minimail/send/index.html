@@ -14,13 +14,53 @@
     
     <div class="main_container">
 
-        <div class="sendbox" id="sendbox"></div>
+        <div class="send" id="send">
+
+            <div class="input-group">
+                
+                <div class="input-group-btn">
+                  <!-- Buttons -->
+                </div>
+
+                <input type="email" 
+                       placeholder="sender" 
+                       id="sender"
+                       class="form-control" 
+                       aria-label="...">
+
+                <input type="email" 
+                       placeholder="mail destination" 
+                       id="mail_destination"
+                       class="form-control" 
+                       aria-label="...">
+
+                <input type="text" 
+                       placeholder="topic" 
+                       id="topic"
+                       class="form-control" 
+                       aria-label="...">
+                
+                <textarea placeholder="mail message..."
+                          id="mail_msg"
+                          class="form-control" 
+                          rows="12"></textarea>
+                          
+                <button type="button" 
+                        class="btn btn-primary">send</button>
+
+                <div class="alert alert-danger" id="alert_error" role="alert"></div>
+
+            </div>
+
+        </div>
 
         <div id="side_bar">
             
             <img src="../assets/logo.png" alt="logo">
 
             <strong class="inbox" id="inbox">inbox</strong>
+
+            <strong class="sendbox" id="sendbox">sendbox</strong>
 
             <strong class="home" id="home">home</strong>
 

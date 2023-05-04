@@ -88,7 +88,7 @@ body{
         overflow: hidden;
         color: $light;
 
-        .sendbox{
+      .sendbox{
             @media(max-width:768px) {
                 width: 100%;
             }
@@ -97,6 +97,11 @@ body{
             background: $light;
             padding: 10px;
             overflow-y: scroll;
+
+            #alert_error{
+              position: absolute;
+              display: none;
+            }
 
             .panel{
               cursor: pointer;
@@ -114,7 +119,7 @@ body{
               background: $secondary;
               color: $light;  
             }
-        }
+      }
 
         #side_bar{
             @media(max-width:768px) {
