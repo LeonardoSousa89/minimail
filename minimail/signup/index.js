@@ -36,7 +36,7 @@ obj.send.addEventListener('click', function(e){
         if(response.status != 201){
             response.json()
                     .then(response=>{
-                        const erro=Object.keys(response).map(e=>{
+                        Object.keys(response).map(e=>{
 
                             obj.alert_error.style='display: flex'
                             obj.alert_error.append(response[e])
