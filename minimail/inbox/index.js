@@ -79,6 +79,7 @@ verifyToken()
 function cleanStorage(){
 
     localStorage.removeItem('data')
+    localStorage.removeItem('client_id')
 }
 
 function notAuthorized(){
@@ -107,7 +108,6 @@ function getMail(){
     let token=client.token
 
     const url=obj.Url_getMail(id, email, 10, 1)
-    console.log(url)
     
     fetch(url, {
         method: 'GET',

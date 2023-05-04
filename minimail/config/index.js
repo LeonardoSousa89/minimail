@@ -63,6 +63,7 @@ verifyToken()
 function cleanStorage(){
 
     localStorage.removeItem('data')
+    localStorage.removeItem('client_id')
 }
 
 function notAuthorized(){
