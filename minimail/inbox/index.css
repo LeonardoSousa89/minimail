@@ -59,7 +59,7 @@ body {
       body .main_container #side_bar img {
         height: 56px;
         width: 141px; }
-      body .main_container #side_bar .home, body .main_container #side_bar .sendbox {
+      body .main_container #side_bar .home, body .main_container #side_bar .sendbox, body .main_container #side_bar .send {
         margin-top: 20px;
         width: 100%;
         padding: 10px;
@@ -67,6 +67,11 @@ body {
         transition-property: all;
         transition-duration: 0.5s; }
       body .main_container #side_bar .sendbox:hover {
+        background: #141F3C;
+        color: #E9E9E9;
+        cursor: pointer;
+        width: 100%; }
+      body .main_container #side_bar .send:hover {
         background: #141F3C;
         color: #E9E9E9;
         cursor: pointer;

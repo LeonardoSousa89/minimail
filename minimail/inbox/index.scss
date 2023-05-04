@@ -141,7 +141,7 @@ body{
                 @include size(56px, 141px);
             }
 
-            .home, .sendbox{
+            .home, .sendbox, .send{
                 margin-top: 20px;
                 width: 100%;
                 padding: 10px;
@@ -160,6 +160,15 @@ body{
                     cursor: pointer;
                     width: 100%;
                 }
+            }
+
+            .send{
+              &:hover{
+                  background: $primary;
+                  color: $icecream;
+                  cursor: pointer;
+                  width: 100%;
+              }
             }
 
             .home{
