@@ -4,6 +4,7 @@ const obj={
     sendbox: doc.querySelector('.sendbox'),
     inbox: doc.querySelector('.inbox'),
     home: doc.querySelector('.home'),
+    alert_error: doc.querySelector('#alert_error'),
     Url_getMail: (id, email, size, page)=> `http://127.0.0.1:34568/inbox/${id}/user?email=${email}&size=${size}&page=${page}`,
     url_client: (id)=>`http://127.0.0.1:34568/user/${id}`
 }
@@ -197,6 +198,15 @@ function getMail(){
             })
         }
 
+    })
+    .catch(_=>{
+
+        obj.inbox.style.display='flex'
+        obj.inbox.style.alignItems='center'
+        obj.inbox.style.justifyContent='center'
+
+        obj.alert_error.style='display: flex'
+        obj.alert_error.append("i'm sorry there's an error with server")
     })
 }
 

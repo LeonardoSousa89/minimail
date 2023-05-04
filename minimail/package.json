@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "render": "node-sass ./index/index.scss ./index/index.css",
-    "continuos_render": "node-sass --watch ./signup/index.scss ./signup/index.css",
-    "push":"git add . && git commit -m '@v30' && git push"
+    "continuos_render": "node-sass --watch ./sendbox/index.scss ./sendbox/index.css",
+    "push":"git add . && git commit -m '@v31' && git push"
   },
   "keywords": [],
   "author": "",

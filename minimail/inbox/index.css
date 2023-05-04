@@ -39,6 +39,9 @@ body {
         box-shadow: 0 0 32px #192C54;
         background: #192C54;
         color: white; }
+      body .main_container .inbox #alert_error {
+        position: absolute;
+        display: none; }
     body .main_container #side_bar {
       display: flex;
       flex-direction: column;

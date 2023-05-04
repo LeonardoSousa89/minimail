@@ -114,6 +114,12 @@ body{
               background: $secondary;
               color: $light;  
             }
+
+            #alert_error{
+              position: absolute;
+              display: none;
+            }
+  
         }
 
         #side_bar{
