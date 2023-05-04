@@ -121,9 +121,10 @@ function sendedMail(){
             
             response.json()
                     .then(response=>{
-                        
+
                         response.data.map(e=>{
 
+                            const id=e.id
                             const topic=e.topic
                             const mail_msg=e.mail_msg.substring(0,50) + '...'
 
@@ -144,17 +145,28 @@ function sendedMail(){
                             const panel_body=doc.createElement('div')
                             panel_body.setAttribute('class', 'panel-body')
 
+                            //html node tree from creation card
                             panel.append(panel_heading)
                             panel.append(panel_body)
 
                             panel_heading.append(panel_title)
 
                             panel_title.append(topic)
+                            
                             panel_element.append(mail_msg)
 
                             panel_body.append(panel_element)
 
+                            //click event
+                            panel.addEventListener('click', function(e){
+                                e.preventDefault()
+
+                                console.log(id)
+                            })
+
+                            //sendbox area insert card from each email sended
                             obj.sendbox.append(panel)
+
                         })
                     })
         }
@@ -187,3 +199,7 @@ function sendedMail(){
 }
 
 sendedMail()
+
+
+
+
