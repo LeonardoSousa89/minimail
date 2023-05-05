@@ -5,9 +5,12 @@ const obj={
     inbox: doc.querySelector('.inbox'),
     send: doc.querySelector('.send'),
     home: doc.querySelector('.home'),
+    delete_all: doc.querySelector('#delete_all'),
     alert_error: doc.querySelector('#alert_error'),
     Url_sendedMail: (id, senderEmail, size, page)=> `http://127.0.0.1:34568/sendbox/${id}/user?sender=${senderEmail}&size=${size}&page=${page}`,
-    url_client: (id)=>`http://127.0.0.1:34568/user/${id}`
+    url_client: (id)=>`http://127.0.0.1:34568/user/${id}`,
+    url_delete_By_id: (user_id, email_id)=>`http://127.0.0.1:34568/sendbox/${user_id}/user/delete?id=${email_id}`,
+    url_delete_all: (id, email)=>`http://127.0.0.1:34568/sendbox/${id}/user/delete-all?sender=${email}`
 }
 
 obj.inbox.addEventListener('click', function(e){
@@ -26,6 +29,41 @@ obj.home.addEventListener('click', function(e){
     e.preventDefault()
 
     doc.location.href='../home/index.html'
+})
+
+obj.delete_all.addEventListener('click', function(e){
+    e.preventDefault()
+
+    const credentials=getUserCredentials()
+    
+    const id=credentials.client.client.id
+    const email=credentials.client.client.email    
+    const token=credentials.client.token
+
+    const url=obj.url_delete_all(id, email)
+    
+    fetch(url,{
+        method: 'DELETE',
+        headers: {
+            'Content-Type':'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+    }).then(response=>{
+
+        if(response.status === 204){
+            
+            doc.location.reload()
+        }
+        if(response.status != 204){
+            
+            obj.alert_error.style='display: flex'
+            obj.alert_error.append("i'm sorry there's an error with server")
+
+            setInterval(function(){ 
+                doc.location.reload() 
+            },1200)
+        }
+    })
 })
 
 function verifyRoute(){
@@ -127,23 +165,34 @@ function sendedMail(){
     .then(response=>{
 
         if(response.status === 200 ){
+
+            obj.delete_all.style.display='flex'
             
             response.json()
                     .then(response=>{
 
                         response.data.map(e=>{
 
-                            const id=e.id
+                            //data API
+                            const email_id=e.id
                             const topic=e.topic
                             const mail_msg=e.mail_msg.substring(0,50) + '...'
 
+                            //containers of data API
                             const panel_title=doc.createElement('p')
                             panel_title.setAttribute('id', 'title')
 
                             const panel_element=doc.createElement('strong')
                             panel_element.setAttribute('id', 'response_content')
 
-                            //Panel with heading 
+                            //creation of icons 
+                            const trash_icon=doc.createElement('span')
+                            trash_icon.setAttribute('class', 'glyphicon glyphicon-trash')
+ 
+                            const pencil_icon=doc.createElement('span')
+                            pencil_icon.setAttribute('class', 'glyphicon glyphicon-pencil')
+
+                            //Panel with heading bootstrap
                             //link: https://getbootstrap.com/docs/3.3/components/
                             const panel=doc.createElement('div')
                             panel.setAttribute('class', 'panel panel-default')
@@ -163,15 +212,46 @@ function sendedMail(){
                             panel_title.append(topic)
                             
                             panel_element.append(mail_msg)
+                            panel_element.append(pencil_icon)
+                            panel_element.append(trash_icon)
 
                             panel_body.append(panel_element)
 
-                            //click event
-                            panel.addEventListener('click', function(e){
+                             //click event (only icon buttons)
+                             pencil_icon.addEventListener('click', function(e){
                                 e.preventDefault()
 
-                                localStorage.setItem('client_id', id)
+                                localStorage.setItem('client_id', email_id)
                                 doc.location.href='../email/index.html'
+                            })
+
+                            //delete by id
+                            trash_icon.addEventListener('click', function(e){
+                                e.preventDefault()
+
+                               const url=obj.url_delete_By_id(id, email_id)
+                              
+                                fetch(url,{
+                                        method: 'DELETE',
+                                        headers: {
+                                            'Content-Type': 'application/json',
+                                            'Authorization': `Bearer ${token}` 
+                                        }
+                                }).then(response=>{
+                                    if(response.status === 204) {
+                                        
+                                        doc.location.reload()
+                                    }
+                                    if(response.status != 204) {
+                                        
+                                        obj.alert_error.style='display: flex'
+                                        obj.alert_error.append("i'm sorry there's an error with server")
+                            
+                                        setInterval(function(){ 
+                                            doc.location.reload() 
+                                        },1200)
+                                    }
+                                })
                             })
 
                             //sendbox area insert card from each email sended

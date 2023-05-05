@@ -98,16 +98,40 @@ body{
             padding: 10px;
             overflow-y: scroll;
 
+            #delete_all{
+              margin-bottom: 10px;
+              outline: none;
+              display: none;
+            }
+
             #alert_error{
               position: absolute;
               display: none;
             }
 
             .panel{
-              cursor: pointer;
 
               #title, #response_content{
                 color: $secondary;
+              }
+
+              #response_content{
+                width: 70%;
+                display: flex;
+
+                .glyphicon{
+                  display: none;
+                  margin-left: 10px;
+                  color: $secondary;
+                  opacity: 0.6;
+                  cursor: pointer;
+                }
+                
+                &:hover{
+                  .glyphicon{
+                    display: flex;
+                  }
+                }
               }
             }
 

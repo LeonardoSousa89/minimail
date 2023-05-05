@@ -28,13 +28,26 @@ body {
       @media (max-width: 768px) {
         body .main_container .sendbox {
           width: 100%; } }
+      body .main_container .sendbox #delete_all {
+        margin-bottom: 10px;
+        outline: none;
+        display: none; }
       body .main_container .sendbox #alert_error {
         position: absolute;
         display: none; }
-      body .main_container .sendbox .panel {
-        cursor: pointer; }
-        body .main_container .sendbox .panel #title, body .main_container .sendbox .panel #response_content {
-          color: #192C54; }
+      body .main_container .sendbox .panel #title, body .main_container .sendbox .panel #response_content {
+        color: #192C54; }
+      body .main_container .sendbox .panel #response_content {
+        width: 70%;
+        display: flex; }
+        body .main_container .sendbox .panel #response_content .glyphicon {
+          display: none;
+          margin-left: 10px;
+          color: #192C54;
+          opacity: 0.6;
+          cursor: pointer; }
+        body .main_container .sendbox .panel #response_content:hover .glyphicon {
+          display: flex; }
       body .main_container .sendbox .response_area {
         margin: 10px 10px;
         padding: 5px;
