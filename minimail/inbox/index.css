@@ -28,10 +28,22 @@ body {
       @media (max-width: 768px) {
         body .main_container .inbox {
           width: 100%; } }
-      body .main_container .inbox .panel {
-        cursor: pointer; }
-        body .main_container .inbox .panel #title, body .main_container .inbox .panel #response_content {
-          color: #192C54; }
+      body .main_container .inbox #delete_all {
+        margin-bottom: 10px;
+        outline: none; }
+      body .main_container .inbox .panel #title, body .main_container .inbox .panel #response_content {
+        color: #192C54; }
+      body .main_container .inbox .panel #response_content {
+        width: 70%;
+        display: flex; }
+        body .main_container .inbox .panel #response_content .glyphicon {
+          display: none;
+          margin-left: 10px;
+          color: #192C54;
+          opacity: 0.6;
+          cursor: pointer; }
+        body .main_container .inbox .panel #response_content:hover .glyphicon {
+          display: flex; }
       body .main_container .inbox .response_area {
         margin: 10px 10px;
         padding: 5px;

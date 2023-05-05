@@ -5,9 +5,12 @@ const obj={
     inbox: doc.querySelector('.inbox'),
     send: doc.querySelector('.send'),
     home: doc.querySelector('.home'),
+    delete_all: doc.querySelector('#delete_all'),
     alert_error: doc.querySelector('#alert_error'),
     Url_getMail: (id, email, size, page)=> `http://127.0.0.1:34568/inbox/${id}/user?email=${email}&size=${size}&page=${page}`,
-    url_client: (id)=>`http://127.0.0.1:34568/user/${id}`
+    url_client: (id)=>`http://127.0.0.1:34568/user/${id}`,
+    url_delete_By_id: (user_id, email_id)=>`http://127.0.0.1:34568/inbox/${user_id}/user/delete?id=${email_id}`,
+    url_delete_all: (id, email)=>`http://127.0.0.1:34568/inbox/${id}/user/delete-all?mail_destination=${email}`
 }
 
 obj.sendbox.addEventListener('click', function(e){
@@ -26,6 +29,12 @@ obj.home.addEventListener('click', function(e){
     e.preventDefault()
 
     doc.location.href='../home/index.html'
+})
+
+obj.delete_all.addEventListener('click', function(e){
+    e.preventDefault()
+
+    alert('delete all')
 })
 
 function verifyRoute(){
@@ -143,6 +152,13 @@ function getMail(){
                             const panel_element=doc.createElement('strong')
                             panel_element.setAttribute('id', 'response_content')
 
+                            //icon 
+                            const trash_icon=doc.createElement('span')
+                            trash_icon.setAttribute('class', 'glyphicon glyphicon-trash')
+
+                            const pencil_icon=doc.createElement('span')
+                            pencil_icon.setAttribute('class', 'glyphicon glyphicon-pencil')
+
                             //Panel with heading 
                             //link: https://getbootstrap.com/docs/3.3/components/
                             const panel=doc.createElement('div')
@@ -163,15 +179,23 @@ function getMail(){
                             panel_title.append(topic)
                             
                             panel_element.append(mail_msg)
+                            panel_element.append(pencil_icon)
+                            panel_element.append(trash_icon)
 
                             panel_body.append(panel_element)
 
                             //click event
-                            panel.addEventListener('click', function(e){
+                            pencil_icon.addEventListener('click', function(e){
                                 e.preventDefault()
 
                                 localStorage.setItem('client_id', id)
-                                doc.location.href='../config/index.html'
+                                doc.location.href='../email/index.html'
+                            })
+
+                            trash_icon.addEventListener('click', function(e){
+                                e.preventDefault()
+
+                               alert('id:' + id +', response: ' + 'email deleted')
                             })
 
                             //inbox area insert card from each email sended

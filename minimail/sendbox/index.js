@@ -171,7 +171,7 @@ function sendedMail(){
                                 e.preventDefault()
 
                                 localStorage.setItem('client_id', id)
-                                doc.location.href='../config/index.html'
+                                doc.location.href='../email/index.html'
                             })
 
                             //sendbox area insert card from each email sended

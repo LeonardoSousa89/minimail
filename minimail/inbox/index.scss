@@ -98,12 +98,36 @@ body{
             padding: 10px;
             overflow-y: scroll;
 
-            .panel{
-              cursor: pointer;
+            #delete_all{
+              margin-bottom: 10px;
+              outline: none;
+            }
 
+            .panel{
+              
               #title, #response_content{
                 color: $secondary;
               }
+              
+              #response_content{
+                width: 70%;
+                display: flex;
+                
+                .glyphicon{
+                  display: none;
+                  margin-left: 10px;
+                  color: $secondary;
+                  opacity: 0.6;
+                  cursor: pointer;
+                }
+                
+                &:hover{
+                  .glyphicon{
+                    display: flex;
+                  }
+                }
+              }
+
             }
 
             .response_area{
@@ -112,7 +136,8 @@ body{
               text-align: center;
               box-shadow: 0 0 32px $secondary;
               background: $secondary;
-              color: $light;  
+              color: $light; 
+
             }
 
             #alert_error{
