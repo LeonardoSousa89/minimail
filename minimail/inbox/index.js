@@ -34,7 +34,36 @@ obj.home.addEventListener('click', function(e){
 obj.delete_all.addEventListener('click', function(e){
     e.preventDefault()
 
-    alert('delete all')
+    const credentials=getUserCredentials()
+    
+    const id=credentials.client.client.id
+    const email=credentials.client.client.email    
+    const token=credentials.client.token
+
+    const url=obj.url_delete_all(id, email)
+    
+    fetch(url,{
+        method: 'DELETE',
+        headers: {
+            'Content-Type':'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+    }).then(response=>{
+
+        if(response.status === 204){
+            
+            doc.location.reload()
+        }
+        if(response.status != 204){
+            
+            obj.alert_error.style='display: flex'
+            obj.alert_error.append("i'm sorry there's an error with server")
+
+            setInterval(function(){ 
+                doc.location.reload() 
+            },1200)
+        }
+    })
 })
 
 function verifyRoute(){
@@ -116,16 +145,15 @@ function monitor(msg){
     console.log(msg)
 }
 
-function getMail(){
-    const credentials=localStorage.getItem('data')
-    const client=JSON.parse(credentials)
+function getMail(){ 
+    const credentials=getUserCredentials()
     
-    const id=client.client.id
-    const email=client.client.email    
-    const token=client.token
+    const id=credentials.client.client.id
+    const email=credentials.client.client.email    
+    const token=credentials.client.token
 
     const url=obj.Url_getMail(id, email, 10, 1)
-    
+
     fetch(url, {
         method: 'GET',
         headers:{
@@ -196,6 +224,7 @@ function getMail(){
                                 doc.location.href='../email/index.html'
                             })
 
+                            //delete by id
                             trash_icon.addEventListener('click', function(e){
                                 e.preventDefault()
 
@@ -216,6 +245,10 @@ function getMail(){
                                         
                                         obj.alert_error.style='display: flex'
                                         obj.alert_error.append("i'm sorry there's an error with server")
+                            
+                                        setInterval(function(){ 
+                                            doc.location.reload() 
+                                        },1200)
                                     }
                                 })
                             })
