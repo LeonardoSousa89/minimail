@@ -101,6 +101,7 @@ body{
             #delete_all{
               margin-bottom: 10px;
               outline: none;
+              display: none;
             }
 
             .panel{
@@ -112,7 +113,7 @@ body{
               #response_content{
                 width: 70%;
                 display: flex;
-                
+
                 .glyphicon{
                   display: none;
                   margin-left: 10px;

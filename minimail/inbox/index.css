@@ -30,7 +30,8 @@ body {
           width: 100%; } }
       body .main_container .inbox #delete_all {
         margin-bottom: 10px;
-        outline: none; }
+        outline: none;
+        display: none; }
       body .main_container .inbox .panel #title, body .main_container .inbox .panel #response_content {
         color: #192C54; }
       body .main_container .inbox .panel #response_content {
