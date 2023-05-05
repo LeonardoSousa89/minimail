@@ -6,7 +6,7 @@
   "scripts": {
     "render": "node-sass ./index/index.scss ./index/index.css",
     "continuos_render": "node-sass --watch ./send/index.scss ./send/index.css",
-    "push":"git add . && git commit -m '@v41' && git push",
+    "push":"git add . && git commit -m '@v42' && git push",
     "deploy": "netlify deploy",
     "deploy-prod": "netlify deploy --prod"
   },
