@@ -94,6 +94,7 @@ body{
             }
             @include d_flex(flex, row, center, center);
 
+            width: 100%;
             overflow: hidden;
             grid-area: header;
             background: #141F3C;
@@ -103,13 +104,15 @@ body{
                 color: #141F3C;
                 font-weight: bold;
             }
-
+            
             #slider{
                 @media(max-width:480px) {
                     @include size(200px, 400px);
                 }
+                
                 @include size(250px, 700px);
             }
+            
         }
         #main{
             @media(max-width:768px) {
