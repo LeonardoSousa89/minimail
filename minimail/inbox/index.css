@@ -28,6 +28,9 @@ body {
       @media (max-width: 768px) {
         body .main_container .inbox {
           width: 100%; } }
+      body .main_container .inbox .info_area {
+        display: flex;
+        flex-direction: column-reverse; }
       body .main_container .inbox #delete_all {
         margin-bottom: 10px;
         outline: none;

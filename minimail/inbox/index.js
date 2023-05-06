@@ -7,6 +7,7 @@ const obj={
     home: doc.querySelector('.home'),
     delete_all: doc.querySelector('#delete_all'),
     alert_error: doc.querySelector('#alert_error'),
+    info_area: doc.querySelector('.info_area'),
     Url_getMail: (id, email, size, page)=> `http://127.0.0.1:34568/inbox/${id}/user?email=${email}&size=${size}&page=${page}`,
     url_client: (id)=>`http://127.0.0.1:34568/user/${id}`,
     url_delete_By_id: (user_id, email_id)=>`http://127.0.0.1:34568/inbox/${user_id}/user/delete?id=${email_id}`,
@@ -254,7 +255,7 @@ function getMail(){
                             })
 
                             //inbox area insert card from each email received
-                            obj.inbox.append(panel)
+                            obj.info_area.append(panel)
 
                         })
                     })

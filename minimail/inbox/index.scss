@@ -97,6 +97,11 @@ body{
             background: $light;
             padding: 10px;
             overflow-y: scroll;
+            
+            .info_area{
+              display: flex;
+              flex-direction: column-reverse;
+            }
 
             #delete_all{
               margin-bottom: 10px;
@@ -130,6 +135,11 @@ body{
               }
 
             }
+
+            // [page-navigation]{
+            //   position: relative;
+            //   top: 1260px;
+            // }
 
             .response_area{
               margin: 10px 10px;
